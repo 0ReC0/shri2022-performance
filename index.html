@@ -8,7 +8,8 @@
   >
   <link rel="preload" as="image" href="assets/logo.svg">
   <link rel="preload" as="image" media="screen and (max-width: 768px)" href="assets/icon_list_m@1x.svg">
-  <link rel="preload" as="image" href="assets/bg@2x.webp" imagesrcset="assets/bg@1x.webp 1x, assets/bg@2x.webp 2x">
+  <link rel="preload" as="image" media="screen and (max-width: 768px)" href="assets/bg@1x.webp">
+  <link rel="preload" as="image" media="screen and (min-width: 769px)" href="assets/bg@2x.webp">
   <link rel="preload" as="image" href="assets/cloud-drizzle.svg">
   <link rel="preload" as="image" href="assets/icon_temperature.svg">
   <link rel="preload" as="image" href="assets/icon_sun.svg">
@@ -228,8 +229,16 @@
       box-sizing: border-box;
       gap: .9375rem;
       height: 20.6875rem;
-      background: image-set(url(assets/bg@1x.webp) 1x, url(assets/bg@2x.webp) 2x) 50% 50%/1260px no-repeat;
-      background: -webkit-image-set(url(assets/bg@1x.webp) 1x, url(assets/bg@2x.webp) 2x) 50% 50%/1260px no-repeat;
+    }
+    @media screen and (max-width: 768px) {
+      .hero-dashboard{
+        background: url(assets/bg@1x.webp) 50% 50%/1260px no-repeat;
+      }
+    }
+    @media screen and (min-width: 769px) {
+      .hero-dashboard{
+        background: url(assets/bg@2x.webp) 50% 50%/1260px no-repeat;
+      }
     }
 
     .hero-dashboard__primary {
